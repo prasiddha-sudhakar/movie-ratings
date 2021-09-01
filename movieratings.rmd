@@ -1,0 +1,25 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+
+ratings <- read_delim('u.data', delim='\t', 
+                      col_names=c('uid', 'mid', 'rating', 'timestamp'),
+                      col_types= 'ccdc')
+head(ratings)
+
+users <- read_delim('u.user', delim='|', 
+                    col_names=c('uid', 'age', 'gender', 'occupation', 'zip'),
+                    col_types='cifcc')
+head(users)
+
+movies <- read_delim('u.item', delim='|', 
+                     col_names=c('mid', 'title'),
+                     col_types='cc')
+head(movies)
+
+```
+
